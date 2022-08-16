@@ -1,0 +1,29 @@
+[package]
+name = "broadcast-over-tor"
+version = "0.1.0"
+authors = ["Andrew Toth <andrewstoth@gmail.com>]
+license = "MIT"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0"
+log = "0.4"
+cln-plugin = "0.1.0"
+tokio = { version = "1.20.1", features = ["rt-multi-thread", "sync"] }
+bitcoin = "0.28.1"
+bitcoin_hashes = { version = "0.11.0", features = [ "serde" ] }
+bitcoincore-rpc = "0.15.0"
+bitcoin-send-tx-p2p = { path = "../send-p2p-tx/", features = [ "tor" ] }
+serde = "1.0.130"
+serde_json = "1.0"
+home = "0.5.3"
+jsonrpc = "0.12.0"
+hex = "0.4.3"
+
+[dev-dependencies]
+tokio = { version = "1.20.1", features = ["macros"] }
+tokio-test = "0.4.2"
+env_logger = "0.9.0"
+bitcoincore-rpc = "0.15.0"
